@@ -5,4 +5,4 @@ Features:
 Add and view patients ,
 Add and view doctors ,
 Book appointments ,
-Simple dashboard with counts
+Simple dashboard with counts.
