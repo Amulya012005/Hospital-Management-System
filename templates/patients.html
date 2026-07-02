@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patients</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1>Patients List</h1>
+
+<a href="/add_patient">
+    <button>Add Patient</button>
+</a>
+
+<br><br>
+
+<table border="1" cellpadding="10" align="center">
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Age</th>
+<th>Disease</th>
+<th>Action</th>
+</tr>
+
+{% for patient in patients %}
+
+<tr>
+
+<td>{{patient.id}}</td>
+<td>{{patient.name}}</td>
+<td>{{patient.age}}</td>
+<td>{{patient.disease}}</td>
+
+<td>
+
+<a href="/edit_patient/{{patient.id}}">
+<button>Edit</button>
+</a>
+
+<a href="/delete_patient/{{patient.id}}">
+<button>Delete</button>
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Edit Patient</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<h1>Edit Patient</h1>
+
+<form method="POST">
+
+<input
+type="text"
+name="name"
+value="{{patient.name}}"
+required>
+
+<br><br>
+
+<input
+type="number"
+name="age"
+value="{{patient.age}}"
+required>
+
+<br><br>
+
+<input
+type="text"
+name="disease"
+value="{{patient.disease}}"
+required>
+
+<br><br>
+
+<button type="submit">
+
+Update Patient
+
+</button>
+
+</form>
+
+</body>
+
+</html>

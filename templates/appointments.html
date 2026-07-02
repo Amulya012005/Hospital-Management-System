@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Appointment</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 350px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        select, input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Book Appointment</h1>
+
+    <form method="POST" action="{{ url_for('add_appointment') }}">
+
+        <!-- Patient Dropdown -->
+        <select name="patient_id" required>
+            <option value="">Select Patient</option>
+            {% for p in patients %}
+                <option value="{{ p.id }}">{{ p.name }}</option>
+            {% endfor %}
+        </select>
+
+        <!-- Doctor Dropdown -->
+        <select name="doctor_id" required>
+            <option value="">Select Doctor</option>
+            {% for d in doctors %}
+                <option value="{{ d.id }}">
+                    {{ d.name }} - {{ d.specialization }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <!-- Date -->
+        <input type="date" name="appointment_date" required>
+
+        <button type="submit">Book Appointment</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

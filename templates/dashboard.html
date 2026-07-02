@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1>🏥 MediCare Pro Dashboard</h1>
+
+<h2>Total Patients : {{ patient_count }}</h2>
+
+<h2>Total Doctors : {{ doctor_count }}</h2>
+
+<br>
+
+<a href="/patients">
+    <button>Patient Management</button>
+</a>
+
+<a href="/doctors">
+    <button>Doctor Management</button>
+</a>
+
+<a href="/appointments">
+    <button>Appointment Management</button>
+</a>
+
+</body>
+</html>
